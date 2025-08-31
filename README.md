@@ -25,6 +25,7 @@ Install Waybar (sudo pacman -S waybar).
 Backup your old config: mv ~/.config/waybar ~/.config/waybar.bak
 Copy my config: cp -r waybar ~/.config/
 Check ~/.config/waybar/config for required fonts and install them.
+Also install xdg-desktop-portal so it can track your percentage and audio
 
 Set up Kitty terminal
 Install Kitty (sudo pacman -S kitty).
