@@ -1,0 +1,141 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 800;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 7px;
+    margin: 2px;
+}
+
+#workspaces button:hover {
+    background: #181825;
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    background: #313244;
+    color: #a6e3a1;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-power,
+#custom-notify,
+#custom-cava {
+    padding: 0px 10px;
+    color: #cdd6f4;
+    border-radius: 7px;
+    background-color: #313244;
+    color: #a6adc8;
+}
+
+#window,
+#workspaces {
+    margin: 0px 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 4px;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+
+#custom-notify {
+    color: #b4befe;
+    font-size: 17px;
+    padding-right: 13px;
+}
+
+#custom-power{
+    color: #f2cdcd;
+    font-size: 17px;
+    margin-right: 10px;
+    padding-right: 13px;
+}
+
+#clock {
+  color: #cba6f7;
+}
+
+#pulseaudio {
+  color: #89dceb;
+}
+
+#battery {
+  color: #f9e2af;
+}
+
+#network {
+  color: #89b4fa;
+  padding-right: 13px;
+}
+
+#custom-cava {
+  color: #fab387;
+  padding-right: 5px;
+  letter-spacing: -5px;
+}
+
+tooltip {
+  background: #313244;
+  color: #a6adc8;
+  border-radius: 10px;
+}
