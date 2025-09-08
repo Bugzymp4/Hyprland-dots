@@ -1,6 +1,6 @@
 Bugzy’s Hyprland Dots
 
-These are my personal Hyprland dotfiles. Follow the steps below to set everything up.
+These are my personal Hyprland dotfiles some stuff used by others. Follow the steps below to set everything up.
 
 Installation
 
