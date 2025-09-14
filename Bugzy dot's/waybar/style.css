@@ -1,3 +1,5 @@
+@import "/home/YOURUSER/.cache/wal/colors-waybar.css";
+
 * {
     border: none;
     border-radius: 0px;
@@ -9,7 +11,7 @@
 
 window#waybar {
     background-color: transparent;
-    color: #cdd6f4;
+    color: @foreground;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -18,27 +20,30 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
+/* Workspaces */
 #workspaces button {
-    background: #1e1e2e;
-    color: #cdd6f4;
+    background: @color10; /* non-selected workspace blue */
+    color: @foreground;
     border-radius: 7px;
     margin: 2px;
 }
 
 #workspaces button:hover {
-    background: #181825;
-    color: #cdd6f4;
+    background: @color3; /* slightly different blue on hover (#84A697) */
+    color: @foreground;
 }
 
 #workspaces button.active {
-    background: #313244;
-    color: #a6e3a1;
+    background: @color1;  /* selected workspace bright yellow (#C9AD44) */
+    color: @background;   /* text contrast */
 }
 
 #workspaces button.urgent {
-    background-color: #f38ba8;
+    background-color: @color1;
+    color: @foreground;
 }
 
+/* Modules: clock, battery, network, pulseaudio, custom */
 #clock,
 #battery,
 #network,
@@ -47,10 +52,9 @@ window#waybar.hidden {
 #custom-notify,
 #custom-cava {
     padding: 0px 10px;
-    color: #cdd6f4;
     border-radius: 7px;
-    background-color: #313244;
-    color: #a6adc8;
+    background-color: @color10; /* blue background (#61948E) */
+    color: @foreground;         /* readable icons/text */
 }
 
 #window,
@@ -66,19 +70,20 @@ window#waybar.hidden {
     margin-right: 0px;
 }
 
-#battery.charging, #battery.plugged {
-    color: #a6e3a1;
+#battery.charging,
+#battery.plugged {
+    color: @color3;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @foreground;
+        color: @background;
     }
 }
 
 #battery.critical:not(.charging) {
-    color: #f38ba8;
+    color: @color1;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -87,55 +92,35 @@ window#waybar.hidden {
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: @background;
 }
 
 #network.disconnected {
-    color: #f38ba8;
+    color: @color1;
 }
 
 #pulseaudio.muted {
-    color: #f38ba8;
+    color: @color1;
 }
 
 #custom-notify {
-    color: #b4befe;
     font-size: 17px;
     padding-right: 13px;
 }
 
-#custom-power{
-    color: #f2cdcd;
+#custom-power {
     font-size: 17px;
     margin-right: 10px;
     padding-right: 13px;
 }
 
-#clock {
-  color: #cba6f7;
-}
-
-#pulseaudio {
-  color: #89dceb;
-}
-
-#battery {
-  color: #f9e2af;
-}
-
-#network {
-  color: #89b4fa;
-  padding-right: 13px;
-}
-
 #custom-cava {
-  color: #fab387;
-  padding-right: 5px;
-  letter-spacing: -5px;
+    padding-right: 5px;
+    letter-spacing: -5px;
 }
 
 tooltip {
-  background: #313244;
-  color: #a6adc8;
-  border-radius: 10px;
+    background: @color10; /* same blue as modules */
+    color: @foreground;
+    border-radius: 10px;
 }
